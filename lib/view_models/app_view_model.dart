@@ -6,10 +6,22 @@ class AppViewModel extends ChangeNotifier {
   List<Task> tasks = <Task>[];
   User user = User("Milly");
 
+// color scheme that stays consistent throughout the application
+
   Color colorLvl1 = Colors.amber.shade100;
   Color colorLvl2 = Colors.amber.shade200;
   Color colorLvl3 = Colors.amber.shade300;
   Color colorLvl4 = Colors.amber.shade600;
+
+// bottom sheet that stays consistent throughout the application
+
+  void bottomSheetBuilder(Widget bottomSheetView, BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: ((context) {
+        return bottomSheetView;
+      }));
+  }
 }
 
 // tasks are gonna be stored here

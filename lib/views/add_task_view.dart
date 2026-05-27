@@ -12,7 +12,10 @@ class AddTaskView extends StatelessWidget {
         height: 60,
         width: 60,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            viewModel.bottomSheetBuilder(
+              Container(height: 100, color: viewModel.colorLvl2), context);
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: viewModel.colorLvl4,
             foregroundColor: viewModel.colorLvl1,
