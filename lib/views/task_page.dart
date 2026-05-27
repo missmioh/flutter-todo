@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo/views/add_task_view.dart';
 
 class TaskPage extends StatelessWidget {
   const TaskPage({super.key});
@@ -31,15 +32,8 @@ class TaskPage extends StatelessWidget {
             ),
           ],
         ),
-
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            print('printing pressed...');
-          },
-          backgroundColor: Colors.amber.shade600,
-          child: Icon(Icons.add),
+        floatingActionButton: const AddTaskView(),
         ),
-      ),
     );
   }
 }
