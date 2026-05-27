@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo/views/bottom_sheets/add_task_bottom_sheet_view.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_todo/view_models/app_view_model.dart';
 
@@ -14,7 +15,7 @@ class AddTaskView extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {
             viewModel.bottomSheetBuilder(
-              Container(height: 100, color: viewModel.colorLvl2), context);
+              AddTaskBottomSheetView(), context);
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: viewModel.colorLvl4,

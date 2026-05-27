@@ -17,6 +17,8 @@ class AppViewModel extends ChangeNotifier {
 
   void bottomSheetBuilder(Widget bottomSheetView, BuildContext context) {
     showModalBottomSheet(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+      clipBehavior: Clip.antiAliasWithSaveLayer,
       context: context,
       builder: ((context) {
         return bottomSheetView;
