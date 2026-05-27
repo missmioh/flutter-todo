@@ -10,10 +10,13 @@ class AddTaskView extends StatelessWidget {
     return Consumer<AppViewModel>(builder:(context, viewModel, child) {
       return SizedBox(
         height: 60,
+        width: 60,
         child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             backgroundColor: viewModel.colorLvl4,
+            foregroundColor: viewModel.colorLvl1,
+            padding: EdgeInsets.all(5.0),
           ),
           child: Icon(
             Icons.add,
