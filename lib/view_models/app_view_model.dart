@@ -17,6 +17,25 @@ class AppViewModel extends ChangeNotifier {
 
 int get numTasks => tasks.length;
 
+// state of tasks
+
+bool getTaskValue(int taskIndex) {
+  return tasks[taskIndex].complete;
+}
+
+// setting title
+
+String getTaskTitle(int taskIndex) {
+  return tasks[taskIndex].title;
+}
+
+// setting value
+
+void setTaskValue(int taskIndex, bool taskValue) {
+  tasks[taskIndex].complete = taskValue;
+  notifyListeners();
+}
+
 
 // adding tasks to the view model
 

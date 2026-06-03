@@ -15,11 +15,21 @@ class TaskListView extends StatelessWidget {
           borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
           child: ListView.separated(
             itemBuilder: (context, index) {
-              return Container(
-                height: 50,
-                width: 50,
-                color: viewModel.colorLvl1,
-                );
+              return ListTile(
+                tileColor: Colors.white,
+                leading: Checkbox(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+                    side: BorderSide(width: 2, color: viewModel.colorLvl1),
+                    checkColor: viewModel.colorLvl1,
+                    activeColor: viewModel.colorLvl2,
+                    value: viewModel.getTaskValue(index),
+                    onChanged: (value) {
+                      viewModel.setTaskValue(index, value!);
+                    }
+                  ),
+                  title: Text(viewModel.getTaskTitle(index)),
+              );
             },
             separatorBuilder: (context, index) {
             // determines how far apart the items are
