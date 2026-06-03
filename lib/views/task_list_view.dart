@@ -14,21 +14,33 @@ class TaskListView extends StatelessWidget {
           color: viewModel.colorLvl3,
           borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
           child: ListView.separated(
+            // aligns all items away from screen borders
+            padding: EdgeInsets.all(15),
             itemBuilder: (context, index) {
-              return ListTile(
-                tileColor: Colors.white,
-                leading: Checkbox(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5)),
-                    side: BorderSide(width: 2, color: viewModel.colorLvl1),
-                    checkColor: viewModel.colorLvl1,
-                    activeColor: viewModel.colorLvl2,
-                    value: viewModel.getTaskValue(index),
-                    onChanged: (value) {
-                      viewModel.setTaskValue(index, value!);
-                    }
-                  ),
-                  title: Text(viewModel.getTaskTitle(index)),
+              return Container(
+                decoration: BoxDecoration(
+                  color: viewModel.colorLvl1,
+                  borderRadius: BorderRadius.circular(20)),
+                child: ListTile(
+                  leading: Checkbox(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)),
+                      side: BorderSide(width: 2, color: viewModel.colorLvl3),
+                      checkColor: viewModel.colorLvl5,
+                      activeColor: viewModel.colorLvl2,
+                      value: viewModel.getTaskValue(index),
+                      onChanged: (value) {
+                        viewModel.setTaskValue(index, value!);
+                      }
+                    ),
+                    title: Text(
+                      viewModel.getTaskTitle(index),
+                      style: TextStyle(
+                        color: viewModel.colorLvl5,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w800,
+                        ),
+                    ),),
               );
             },
             separatorBuilder: (context, index) {

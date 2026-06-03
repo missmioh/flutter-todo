@@ -12,6 +12,7 @@ class AppViewModel extends ChangeNotifier {
   Color colorLvl2 = Colors.amber.shade200;
   Color colorLvl3 = Colors.amber.shade300;
   Color colorLvl4 = Colors.amber.shade600;
+  Color get colorLvl5 => const Color.fromARGB(255, 163, 116, 6);
 
 // count of tasks
 
