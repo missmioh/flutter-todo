@@ -10,7 +10,21 @@ class TaskListView extends StatelessWidget {
     return Consumer<AppViewModel>(
       builder: (context, viewModel, child) {
       return Container(
-        decoration: BoxDecoration(color: viewModel.colorLvl3, borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
+        decoration: BoxDecoration(
+          color: viewModel.colorLvl3,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
+          child: ListView.separated(
+            itemBuilder: (context, index) {
+              return Container(
+                height: 50,
+                width: 50,
+                color: viewModel.colorLvl1,
+                );
+            },
+            separatorBuilder: (context, index) {
+            // determines how far apart the items are
+             return SizedBox(height: 15);
+          }, itemCount: viewModel.numTasks)
         );
       },
     );

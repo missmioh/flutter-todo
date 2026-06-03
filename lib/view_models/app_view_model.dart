@@ -13,6 +13,11 @@ class AppViewModel extends ChangeNotifier {
   Color colorLvl3 = Colors.amber.shade300;
   Color colorLvl4 = Colors.amber.shade600;
 
+// count of tasks
+
+int get numTasks => tasks.length;
+
+
 // adding tasks to the view model
 
   void addTask(Task newTask) {
