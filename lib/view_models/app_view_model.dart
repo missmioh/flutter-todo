@@ -13,6 +13,13 @@ class AppViewModel extends ChangeNotifier {
   Color colorLvl3 = Colors.amber.shade300;
   Color colorLvl4 = Colors.amber.shade600;
 
+// adding tasks to the view model
+
+  void addTask(Task newTask) {
+    tasks.add(newTask);
+    notifyListeners();
+  }
+
 // bottom sheet that stays consistent throughout the application
 
   void bottomSheetBuilder(Widget bottomSheetView, BuildContext context) {
