@@ -11,7 +11,7 @@ class TaskListView extends StatelessWidget {
       builder: (context, viewModel, child) {
       return Container(
         decoration: BoxDecoration(
-          color: viewModel.colorLvl3,
+          color: viewModel.colorLvl2,
           borderRadius: BorderRadius.vertical(top: Radius.circular(30))),
           child: ListView.separated(
             // aligns all items away from screen borders
