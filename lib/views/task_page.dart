@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo/views/add_task_view.dart';
+import 'package:flutter_todo/views/task_list_view.dart';
 
 class TaskPage extends StatelessWidget {
   const TaskPage({super.key});
@@ -28,7 +29,7 @@ class TaskPage extends StatelessWidget {
             // task list view
             Expanded(
               flex: 7,
-              child: Container(color: Colors.amber.shade300),
+              child: TaskListView(),
             ),
           ],
         ),
