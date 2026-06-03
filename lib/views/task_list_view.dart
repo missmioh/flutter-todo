@@ -17,30 +17,44 @@ class TaskListView extends StatelessWidget {
             // aligns all items away from screen borders
             padding: EdgeInsets.all(15),
             itemBuilder: (context, index) {
-              return Container(
-                decoration: BoxDecoration(
-                  color: viewModel.colorLvl1,
-                  borderRadius: BorderRadius.circular(20)),
-                child: ListTile(
-                  leading: Checkbox(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5)),
-                      side: BorderSide(width: 2, color: viewModel.colorLvl3),
-                      checkColor: viewModel.colorLvl5,
-                      activeColor: viewModel.colorLvl2,
-                      value: viewModel.getTaskValue(index),
-                      onChanged: (value) {
-                        viewModel.setTaskValue(index, value!);
-                      }
-                    ),
-                    title: Text(
-                      viewModel.getTaskTitle(index),
-                      style: TextStyle(
-                        color: viewModel.colorLvl5,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w800,
-                        ),
-                    ),),
+              return Dismissible(
+                key: UniqueKey(),
+                onDismissed: (direction) {
+                  viewModel.deleteTask(index);
+                },
+                background: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 5),
+                  decoration: BoxDecoration(
+                    color: viewModel.colorAccent1,
+                    borderRadius: BorderRadius.circular(20)),
+                  child: Center(child: Icon(Icons.delete, color: viewModel.colorAccent2),
+                  ),
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: viewModel.colorLvl1,
+                    borderRadius: BorderRadius.circular(20)),
+                  child: ListTile(
+                    leading: Checkbox(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5)),
+                        side: BorderSide(width: 2, color: viewModel.colorLvl3),
+                        checkColor: viewModel.colorLvl5,
+                        activeColor: viewModel.colorLvl2,
+                        value: viewModel.getTaskValue(index),
+                        onChanged: (value) {
+                          viewModel.setTaskValue(index, value!);
+                        }
+                      ),
+                      title: Text(
+                        viewModel.getTaskTitle(index),
+                        style: TextStyle(
+                          color: viewModel.colorLvl5,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w800,
+                          ),
+                      ),),
+                ),
               );
             },
             separatorBuilder: (context, index) {
