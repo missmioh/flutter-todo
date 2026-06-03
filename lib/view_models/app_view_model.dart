@@ -20,6 +20,10 @@ class AppViewModel extends ChangeNotifier {
 
 int get numTasks => tasks.length;
 
+// creates a filtered list of all the tasks that are NOT complete
+
+int get numTasksRemaining => tasks.where((task) => !task.complete).length;
+
 // state of tasks
 
 bool getTaskValue(int taskIndex) {
